@@ -1,10 +1,14 @@
 
-let NameDisplay = ({person:{firstName, lastName, id}}) => {
+let NameDisplay = ({person}) => {
     
     // return React.createElement("h1", { id: "myId" }, `Hello! ${props.firstName}`);
+   
+    const getFullName = () => `${person.firstName} ${person.lastName}`;
+   
     return (
         <h1 id="myID">
-            Hello {firstName} {lastName} {id}
+            Hello {getFullName()}
+            {/* Hello {person.firstName} {person.lastName} {person.id} */}
         </h1>
     );
 };
