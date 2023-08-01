@@ -44,7 +44,7 @@ app.get("/api/notes/:id", (request, response) => {
 
 app.delete("/api/notes/:id", (request, response) => {
     const myId = Number(request.params.id);
-    const notes = notes.filter(note => note.id !== myId);
+     notes = notes.filter(note => note.id !== myId);
 
    
         response.status(204).send(`The note at id ${myId} has been deleted`);
