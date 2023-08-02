@@ -4,8 +4,18 @@
 
 const express = require("express")
 const app = express()
+app.use(express.json())
 
-let notes =[
+// const requestLogger = (request, response, next) => {
+//     console.log('Method:', request.method)
+//     console.log('Path:  ', request.path)
+//     console.log('Body:  ', request.body)
+//     console.log('---')
+//     next()
+// }
+// app.use(requestLogger);
+
+let notes = [
     {
         id: 1,
         content: "HTML is easy",
@@ -28,11 +38,15 @@ app.get('/', (request, response) => {
 
 app.get("/api/notes/", (request, response) => {
     response.json(notes);
+    // console.dir(request)
+    // return response.setHeader('content-type', 'application/json').send('{"name":"sharmila"}').end()
 });
 
-app.get("/api/notes/:id", (request, response) => {
-    const myId = Number(request.params.id);
-    const myNote = notes.find(note => note.id === myId);
+
+app.get("/api/notes/:hello", (request, response) => {
+    console.log("The input value is", request.params.hello)
+    const myId = request.params.hello;
+    const myNote = notes.find(note => note.id == myId);
 
     if (myNote) {
         response.json(myNote)
@@ -44,12 +58,40 @@ app.get("/api/notes/:id", (request, response) => {
 
 app.delete("/api/notes/:id", (request, response) => {
     const myId = Number(request.params.id);
-     notes = notes.filter(note => note.id !== myId);
+    notes = notes.filter(note => note.id !== myId);
 
-   
-        response.status(204).send(`The note at id ${myId} has been deleted`);
-    
+
+    response.status(204).send(`The note at id ${myId} has been deleted`);
+
 });
+
+app.post("/api/notes",(request, response) => {
+    const myNewPost = request.body;
+    myNewPost.id = notes.length + 1 
+    notes.push(myNewPost);
+    response.status(201).json(myNewPost);
+
+});
+
+
+app.put("/api/notes/:id", (request, response) => {
+    const myId = Number(request.params.id);
+    const updatedNote = request.body;
+    notes = notes.map((element) => {
+        if (element.id === myId) {
+            return updatedNote
+        }
+        else {
+            return element;
+        }
+    } );
+
+
+    response.status(202).send(`The note at id ${myId} has been updated`);
+
+});
+
+
 
 
 // const app = http.createServer((request, response) => {
