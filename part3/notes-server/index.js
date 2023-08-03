@@ -3,8 +3,10 @@
 // const http = require("http")
 
 const express = require("express")
+const cors = require("cors")
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 // const requestLogger = (request, response, next) => {
 //     console.log('Method:', request.method)
@@ -65,9 +67,9 @@ app.delete("/api/notes/:id", (request, response) => {
 
 });
 
-app.post("/api/notes",(request, response) => {
+app.post("/api/notes", (request, response) => {
     const myNewPost = request.body;
-    myNewPost.id = notes.length + 1 
+    myNewPost.id = notes.length + 1
     notes.push(myNewPost);
     response.status(201).json(myNewPost);
 
@@ -84,7 +86,7 @@ app.put("/api/notes/:id", (request, response) => {
         else {
             return element;
         }
-    } );
+    });
 
 
     response.status(202).send(`The note at id ${myId} has been updated`);
