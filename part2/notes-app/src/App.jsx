@@ -9,7 +9,9 @@ const App = () => {
     important: true
   }]);
   useEffect(() => {
-    let notesPromise = axios.get("http://localhost:3001/api/notes")
+    // let notesPromise = axios.get("http://localhost:3001/api/notes")
+    let notesPromise = axios.get("/api/notes")
+
     notesPromise.then((result) => {
       console.dir(result.data)
      setNotes(result.data)
