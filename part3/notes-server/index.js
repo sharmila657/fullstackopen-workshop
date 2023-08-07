@@ -55,7 +55,7 @@ app.get("/api/notes/:hello", (request, response) => {
 });
 
 app.delete("/api/notes/:id", (request, response) => {
-    const myId = Number(request.params.id);
+    // const myId = Number(request.params.id);
     Note.find({}).then((result) => {
         response.json(result);
     });
@@ -63,7 +63,7 @@ app.delete("/api/notes/:id", (request, response) => {
 });
 
 app.post("/api/notes", (request, response, next) => {
-    debugger
+
     const myNewPost = request.body;
     console.log(request, "rqst");
     
@@ -99,11 +99,12 @@ const errorHandler = (error, request, response, next) => {
   
     if (error.name === 'CastError') {
       return response.status(400).send({ error: 'malformatted id' })
-    } else if (error.name === 'ValidationError')
+    } else if (error.name ==='ValidationError')
     { return response.status(400).json({ error: error.message }) }
   
     next(error)
-  }
+}
+  
 app.use(errorHandler);
 
 const PORT = 3001;
