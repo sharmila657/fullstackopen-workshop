@@ -68,19 +68,31 @@
 // const arr = 
 
 
-let array = [{ id: 1, name: "Sharmila" },
-{ id: 2, name: "Niru" },
-{ id: 3, name: "Arju" }]
+// let array = [{ id: 1, name: "Sharmila" },
+// { id: 2, name: "Niru" },
+// { id: 3, name: "Arju" }]
 
-let array2 = array.map(({ id, name }, index1) => {
-    let myObj = { name: name + "-" + id, index: index1 }
-    return myObj
-})
+// let array2 = array.map(({ id, name }, index1) => {
+//     let myObj = { name: name + "-" + id, index: index1 }
+//     return myObj
+// })
 
-let array3 = array.find(({id}) => {
-    if (id > 1) {
-        return true;
-    }
-})
+// let array3 = array.find(({id}) => {
+//     if (id > 1) {
+//         return true;
+//     }
+// })
 
-console.log(array3)
+// console.log(array3)
+
+
+function hello(abc) {
+    let newvar = "hello" + abc
+    console.log("i am printing",newvar)
+return newvar
+}
+let a = hello(123)
+console.log(a)
+
+
+
