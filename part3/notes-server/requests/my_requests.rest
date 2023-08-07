@@ -7,18 +7,18 @@ content-type: application/json
 
 {
     
-    "content": "kathmandu ",
-    "important": 8855956
+    "content": "Hel",
+    "important": "true"
 
 }
 
 
 ###
-PUT http://localhost:3001/api/notes/2
+PUT http://localhost:3001/api/notes/64d06f07dfe468336ce336ac
 content-type: application/json
 
 {
-    "id": 2,
-    "content": "Updated notes hai",
+    
+    "content": "ab",
     "important": true
 }
