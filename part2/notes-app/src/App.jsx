@@ -3,38 +3,10 @@ import axios from "axios"
 import { useState, useEffect} from "react";
 
 
-
-// const App = (props) => {
-//   const [notes, setNotes] = useState(props.notes)
-
-
-//   const addNote = (event) => {
-//     event.preventDefault()
-//     console.log('button clicked', event.target)
-//   }
-
-//   return (
-//     <div>
-//       <h1>Notes</h1>
-//       <ul>
-//         {notes.map(note => 
-//           <Note key={note.id} note={note} />
-//         )}
-//       </ul>
-
-//       <form onSubmit={addNote}>
-//         <input />
-//         <button type="submit">save</button>
-//       </form>   
-//     </div>
-//   )
-// }
-
-
 const App = () => {
   let [ notes ,setNotes] =useState( [{
     id: 100,
-    content: "Sharmila is easy",
+    content: "Html is easy",
     important: true
   }]);
   useEffect(() => {

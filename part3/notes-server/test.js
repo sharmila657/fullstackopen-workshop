@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // let a = [1, 2, 3, 4]
 // let b = a.map((name, second, third, fourth) => {
 
@@ -86,13 +103,13 @@
 // console.log(array3)
 
 
-function hello(abc) {
-    let newvar = "hello" + abc
-    console.log("i am printing",newvar)
-return newvar
-}
-let a = hello(123)
-console.log(a)
+// function hello(abc) {
+//     let newvar = "hello" + abc
+//     console.log("i am printing",newvar)
+// return newvar
+// }
+// let a = hello(123)
+// console.log(a)
 
 
 
