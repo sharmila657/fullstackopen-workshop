@@ -4,6 +4,6 @@ const { info } = require("./utils/logger")
 const app = require("./app")
 
 app.listen(PORT, () => {
-  info(`Server running on port ${PORT}`,"loggin from index");
+  info(`Server running on port ${process.env.PORT}`,"loggin from index");
 });
 

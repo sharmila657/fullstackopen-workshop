@@ -3,7 +3,7 @@ const cors = require("cors")
 const app = express()
 const mongoose = require('mongoose')
 const notesController = require("./controllers/notes");
-const { url } = require("./utils/config")
+const {MONGODB_URI}= require("./utils/config")
 const {
     errorHandler,
     noHandlers,
@@ -17,13 +17,20 @@ app.use(cors())
 app.use(express.static('dist'))
 
 
-mongoose.set('strictQuery',false)
-mongoose.connect(url).then(() => {console.log('connected')}).catch(err=>console.log(err))
+mongoose.set('strictQuery', false)
+mongoose.connect(MONGODB_URI)
+// mongoose.connect(url).then(() => {
+//     console.log('connected')
+// }).catch(err => console.log(err))
+
+console.log("NODE_ENV is ", process.env.NODE_ENV);
 
 
-
-
+app.use(express.json())
+app.use(cors())
+app.use(express.static("dist"))
 app.use(requestLogger);
+
 
 app.use("/api/notes", notesController)
 

@@ -1,13 +1,13 @@
 DELETE http://localhost:3001/api/notes/2
 ###
-GET http://localhost:3001/api/notes/ 
+GET http://localhost:3001/api/notes/
 ###
-POST http://localhost:3001/api/notes/ 
+POST http://localhost:3001/api/notes/64cc84be1d8b996ab9eedd58
 content-type: application/json
 
 {
     
-    "content": "Hel",
+    "content": "Nepal is beautiful",
     "important": "true"
 
 }
