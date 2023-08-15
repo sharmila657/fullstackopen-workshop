@@ -2,7 +2,7 @@ DELETE http://localhost:3001/api/notes/2
 ###
 GET http://localhost:3001/api/notes/
 ###
-POST http://localhost:3001/api/notes/64cc84be1d8b996ab9eedd58
+POST http://localhost:3001/api/notes/
 content-type: application/json
 
 {
@@ -11,14 +11,22 @@ content-type: application/json
     "important": "true"
 
 }
+###
 
+POST http://localhost:3001/api/users/
+content-type: application/json
 
+{
+       "username": "sharmila",
+       " name": "jirel",
+       "password":"hello"
+}
 ###
 PUT http://localhost:3001/api/notes/64d06f07dfe468336ce336ac
 content-type: application/json
 
 {
     
-    "content": "ab",
+    "content": "abtfugujg",
     "important": true
 }

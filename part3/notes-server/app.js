@@ -3,6 +3,7 @@ const cors = require("cors")
 const app = express()
 const mongoose = require('mongoose')
 const notesController = require("./controllers/notes");
+const usersController = require("./controllers/users")
 const {MONGODB_URI}= require("./utils/config")
 const {
     errorHandler,
@@ -23,7 +24,7 @@ mongoose.connect(MONGODB_URI)
 //     console.log('connected')
 // }).catch(err => console.log(err))
 
-console.log("NODE_ENV is ", process.env.NODE_ENV);
+//console.log("NODE_ENV is ", process.env.NODE_ENV);
 
 
 app.use(express.json())
@@ -33,6 +34,8 @@ app.use(requestLogger);
 
 
 app.use("/api/notes", notesController)
+app.use("/api/users",usersController)
+
 
 app.use(noHandlers);
 app.use(errorHandler);
