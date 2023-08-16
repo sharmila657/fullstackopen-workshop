@@ -8,7 +8,8 @@ content-type: application/json
 {
     
     "content": "Nepal is beautiful",
-    "important": "true"
+    "important": "true",
+    "userId":"64dc6a60b0e3ad86fe6fcf85"
 
 }
 ###
@@ -17,9 +18,9 @@ POST http://localhost:3001/api/users/
 content-type: application/json
 
 {
-       "username": "sharmila",
-       " name": "jirel",
-       "password":"hello"
+       "username": "Sunil",
+       "name": "Taj",
+       "password":"sunil12"
 }
 ###
 PUT http://localhost:3001/api/notes/64d06f07dfe468336ce336ac
