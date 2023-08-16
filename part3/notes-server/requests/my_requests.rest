@@ -1,6 +1,6 @@
 DELETE http://localhost:3001/api/notes/2
 ###
-GET http://localhost:3001/api/notes/
+GET http://localhost:3001/api/users/
 ###
 POST http://localhost:3001/api/notes/
 content-type: application/json
@@ -10,6 +10,7 @@ content-type: application/json
     "content": "Nepal is beautiful",
     "important": "true",
     "userId":"64dc6a60b0e3ad86fe6fcf85"
+    
 
 }
 ###
@@ -18,9 +19,17 @@ POST http://localhost:3001/api/users/
 content-type: application/json
 
 {
-       "username": "Sunil",
-       "name": "Taj",
-       "password":"sunil12"
+       "username": "Tejj",
+       "name": "Fellowship",
+       "password":"tejfellow"
+}
+###
+POST http://localhost:3001/api/login/
+content-type: application/json
+
+{
+       "username": "Tejj",
+       "password":"tejfellow"
 }
 ###
 PUT http://localhost:3001/api/notes/64d06f07dfe468336ce336ac

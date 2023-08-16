@@ -34,7 +34,7 @@ app.post("/", async (request, response, next) => {
     username: body.username,
 
     name: body.name,
-    password:body.passwordHash,
+    passwordHash,
   });
 
   try {

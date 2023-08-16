@@ -2,6 +2,15 @@ const app = require("express").Router()
 const Note = require("../models/note")
 const User = require('../models/user')
 
+
+const getTokenFrom = request => {
+    const authorization = request.get('authorization')
+    if (authorization && authorization.startsWith('Bearer ')) {
+      return authorization.replace('Bearer ', '')
+    }
+    return null
+  }
+
 app.get("/",async(request, response) => {
     let result = await Note.find({}).populate("user",{username: 1, name:1});
         response.json(result);
@@ -24,7 +33,14 @@ app.delete("/", (request, response) => {
 app.post("/", async (request, response, next) => {
 
     const myNewPost = request.body;
-    const user = await User.findById(myNewPost.userId);
+
+    const decodedToken = jwt.verify(getTokenFrom(request), process.env.SECRET)
+    if (!decodedToken.id) {
+      return response.status(401).json({ error: 'token invalid' })
+    }
+    const user = await User.findById(decodedToken.id)
+ 
+    // const user = await User.findById(myNewPost.userId);
     
     const note = new Note({
         content: myNewPost.content,
