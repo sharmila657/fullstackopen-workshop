@@ -119,17 +119,9 @@ const loginForm = ()=> {
 
  const noteForm = ()=>{
   return(
-    <Togglable buttonLabel ="new note" ref={noteFormRef}>
-    <NoteForm>
-    <form onSubmit={callFunc}>
-
-    <input name="sharmila"/>
-    <button>Submit</button>
-
-  </form>
-
-    </NoteForm>
-   </Togglable>
+    <Togglable buttonLabel ="new note">
+      <NoteForm/>
+    </Togglable>
   )
  }
 
@@ -139,7 +131,10 @@ const loginForm = ()=> {
     <Notification message = {notification}/>
     <h2>Login Form</h2>
 
-    {user === null?loginForm() : noteForm()} 
+    {/* {user === null?loginForm() : noteForm()}  */}
+
+    {!user && loginForm()}
+    {user && noteForm()}
     <ul>
        {notes.map((value) => {
         return <Note key={value.id} note={value} />
