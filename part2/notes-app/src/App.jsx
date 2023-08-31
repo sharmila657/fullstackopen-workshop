@@ -11,8 +11,6 @@ import NoteForm from "./components/NoteForm";
 // const [note, setNote] = useState("Type a note");
 // const [showAll, setShowAll] = useState(true);
 
-
-
 const App = () => {
 let [ notes ,setNotes] =useState([]);
 const [notification, setNotification] = useState('');
@@ -137,7 +135,16 @@ const loginForm = ()=> {
     {user && noteForm()}
     <ul>
        {notes.map((value) => {
-        return <Note key={value.id} note={value} />
+        return(
+         <Note 
+        key={value.id} 
+        note={value}
+        updateNote={()=>{
+          updateData(value.id)
+        }}
+         />
+        
+        )
       })}
 
     </ul>
