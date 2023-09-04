@@ -16,7 +16,7 @@ const mySubmit = (e) => {
   
         <form onSubmit={mySubmit}>
           <input 
-           placeholder="wite note content here"
+           placeholder="write note content here"
            value={newNote}
            onChange={(e)=>setNewNote(e.target.value)}
           />
