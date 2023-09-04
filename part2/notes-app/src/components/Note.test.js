@@ -11,7 +11,7 @@ test("renders content", () => {
   };
 
   const { container } = render(<Note note={note} />);
-  screen.debug();
+  // screen.debug();
 
   const div = container.querySelector(".note");
   expect(div).toHaveTextContent(

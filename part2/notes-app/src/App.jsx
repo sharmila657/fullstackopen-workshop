@@ -26,7 +26,7 @@ useEffect (() => {
   noteService.getAll().then((result)=>{
     console.log(result,"test")
     setNotes(result)
-    let myUser = window.localStorage.getItem("noteUser");
+    // let myUser = window.localStorage.getItem("noteUser");
 
 if(myUser){
   setUser(JSON.parse(myUser));
@@ -108,7 +108,7 @@ const loginForm = ()=> {
  const noteForm = ()=>{
   return(
     <Togglable buttonLabel ="new note">
-      <NoteForm onSubmit={handleSubmit} />
+      <NoteForm createNote={handleSubmit} />
     </Togglable>
   )
  }
