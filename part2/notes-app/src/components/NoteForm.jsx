@@ -1,22 +1,22 @@
 import { useState } from "react";
 
-const NoteForm = ({ onSubmit}) => {
+const NoteForm = ({ createNote}) => {
 const [newNote, setNewNote] = useState("");
-
 
 const mySubmit = (e) => {
   e.preventDefault();
-  onSubmit({
+  createNote({
     content: newNote,
     important: true,
   })
 }
     return (
-      <div>
+      <div className="formDiv">
         <h2>Create a new note</h2>
   
         <form onSubmit={mySubmit}>
-          <input
+          <input 
+           placeholder="wite note content here"
            value={newNote}
            onChange={(e)=>setNewNote(e.target.value)}
           />
@@ -25,5 +25,4 @@ const mySubmit = (e) => {
       </div>
     )
   }
-
   export default NoteForm;
