@@ -1,18 +1,8 @@
 import { createRoot } from "react-dom/client";
-import {useState} from "react"
 import {createStore} from "redux"
+import noteReducer from "./reducers/noteReducer";
 
-const counterReducer = (state = 0, action) =>{
-    console.log(action);
-    console.log(state);
-    if(action.type === "NEW_NOTE"){
-        const newState = state.concat(action.payload);
-        return newState;
-    }
-    return state;
-}
-
-const store = createStore(counterReducer);
+const store = createStore(noteReducer);
 store.dispatch({
     type:'NEW_NOTE',
     payload:{
@@ -36,15 +26,24 @@ const App = () => {
     )
   }
 
-// const  
-
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-root.render(<App />)
-store.subscribe(() => {
-    root.render(<App />)
-})
 
- 
+    
+    store.dispatch({
+        type:"NEW_NOTE",
+        payload:{
+            content:"the app state is in redux store",
+            important:true,
+            
+        }
+        
+    })
+    
+    root.render(<App/>)
+    // store.subscribe(()=>{
+    //     return <App/>
+    // })
+
 
