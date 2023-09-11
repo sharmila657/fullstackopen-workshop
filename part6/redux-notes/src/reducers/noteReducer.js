@@ -1,5 +1,5 @@
 const noteReducer = (state = [], action) => {
-  switch (action.type) {
+  switch (action. type) {
     case "NEW_NOTE":{
       const newState = state.concat(action.payload);
       return newState;
