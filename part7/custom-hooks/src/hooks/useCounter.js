@@ -1,6 +1,6 @@
 import { useState } from "react"
-const useCounter = () => {
-    const [value, setValue] = useState(0)
+const useCounter = (initialvalue = 0) => {
+    const [value, setValue] = useState(initialvalue)
   
     const increase = () => {
       setValue(value + 1)

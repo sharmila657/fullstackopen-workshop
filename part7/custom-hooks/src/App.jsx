@@ -1,22 +1,25 @@
 import useCounter from './hooks/useCounter'
 
 const App = () => {
-  const counter = useCounter()
+  const counter1 = useCounter()
+  const counter2 = useCounter();
 
   return (
+    <>
     <div>
-      <div>{counter.value}</div>
-      <button onClick={counter.increase}>
-        plus
-      </button>
-      <button onClick={counter.decrease}>
-        minus
-      </button>      
-      <button onClick={counter.zero}>
-        zero
-      </button>
+      <div>{counter1.value}</div>
+      <button onClick={counter1.increase}>plus</button>
+      <button onClick={counter1.decrease}>minus</button>      
+      <button onClick={counter1.zero}>zero</button>
     </div>
-  )
+    <div>
+  <div>{counter2.value}</div>
+  <button onClick={counter2.increase}>plus</button>
+  <button onClick={counter2.decrease}>minus</button>      
+  <button onClick={counter2.zero}>zero</button>
+</div>
+</>
+)
 }
 
 export default App;
