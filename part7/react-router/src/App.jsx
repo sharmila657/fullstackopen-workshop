@@ -5,7 +5,7 @@ import { useState } from "react";
 import Login from "./Login";
 // import { Navbar, Nav } from "react-bootstrap";
 // import {Container, Alert, AppBar,Toolbar, IconButton, Button,} from "@mui/material";
-import { Navigation } from "./components/Button";
+import { Footer, Navigation } from "./components/Button";
 const notes = [
   {
     content: "the app state is in redux store",
@@ -46,18 +46,18 @@ const App = () => {
     padding: 5,
   };
 
-  const footerStyle = { color: "blue", fontSize: "20px" };
+  // const footerStyle = { color: "blue", fontSize: "20px" };
 
   return (
     <>
   
       <Navigation>
-        <Link style={padding} to="/">home</Link>
-        <Link style={padding} to="/notes">notes</Link>
-        <Link style={padding} to="/users">users</Link>
+        <Link style={padding} to="/">Home</Link>
+        <Link style={padding} to="/notes">Notes</Link>
+        <Link style={padding} to="/users">Users</Link>
         {user
           ? <em>{user} logged in</em>
-          : <Link style={padding} to="/login">login</Link>
+          : <Link style={padding} to="/login">Login</Link>
         }
       </Navigation>
 
@@ -73,7 +73,7 @@ const App = () => {
       </Routes>
 
       <div>
-        <i style={footerStyle}>Note app, Department of Computer Science 2023</i>
+        <Footer>Note app, Department of Computer Science 2023</Footer>
       </div>
       </>
   );
