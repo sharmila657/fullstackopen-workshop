@@ -17,7 +17,9 @@ const Login = ({ setUser }) => {
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <Input label="username" name="username" />
+          <Input placeholder="username" label="username" Name="username" /><br></br>
+          <Input placeholder="password" label="password" Password="password" />
+
         </div>
         <div>
           <Button type="submit">
