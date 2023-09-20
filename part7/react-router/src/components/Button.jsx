@@ -21,7 +21,7 @@ export const Page = styled.div`
 `
 
 export const Navigation = styled.div`
-  background: BurlyWood;
+  background: pink;
   padding: 1em;
 `
 
