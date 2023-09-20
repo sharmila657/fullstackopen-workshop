@@ -4,9 +4,8 @@ import Note from "./Note";
 import { useState } from "react";
 import Login from "./Login";
 // import { Navbar, Nav } from "react-bootstrap";
-import {
-  Container, Alert, AppBar,Toolbar, IconButton, Button,} from "@mui/material";
-
+// import {Container, Alert, AppBar,Toolbar, IconButton, Button,} from "@mui/material";
+import { Navigation } from "./components/Button";
 const notes = [
   {
     content: "the app state is in redux store",
@@ -50,27 +49,17 @@ const App = () => {
   const footerStyle = { color: "blue", fontSize: "20px" };
 
   return (
-    <Container>
-      <AppBar position="static">
-        <Toolbar>
-          <Button color="inherit" component={Link} to="/">
-            home
-          </Button>
-          <Button color="inherit" component={Link} to="/notes">
-            notes
-          </Button>
-          <Button color="inherit" component={Link} to="/users">
-            users
-          </Button>
-          {user ? (
-            <Alert style = {padding}>{user} logged in</Alert>
-          ) : (
-            <Button color="inherit" component={Link} to="/login">
-              login
-            </Button>
-          )}
-        </Toolbar>
-      </AppBar>
+    <>
+  
+      <Navigation>
+        <Link style={padding} to="/">home</Link>
+        <Link style={padding} to="/notes">notes</Link>
+        <Link style={padding} to="/users">users</Link>
+        {user
+          ? <em>{user} logged in</em>
+          : <Link style={padding} to="/login">login</Link>
+        }
+      </Navigation>
 
       <Routes>
         <Route path="/notes/:id" element={<Note note={note} />} />
@@ -86,7 +75,7 @@ const App = () => {
       <div>
         <i style={footerStyle}>Note app, Department of Computer Science 2023</i>
       </div>
-    </Container>
+      </>
   );
 };
 
