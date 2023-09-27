@@ -1,9 +1,9 @@
 POST http://localhost:3001/api/notes/
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNoYXJtaWxhSmlyZWwiLCJpZCI6MTUsImlhdCI6MTY5NTc0NjMyOH0.KyNFif96-XB6GzknwJL1fa4GvEYW9Wrd87-WY-6B31o
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImppcmVsIiwiaWQiOjUsImlhdCI6MTY5NTgwMTIwNX0.hx6R43Phs36F-XtjRT_RPoWtJ7LATKkEZ9N9sp09SJE
 
 {
-    "content": "note creation using no important",
+    "content": "Sharmila notes2",
     "important": false
 }
 ###
@@ -11,7 +11,7 @@ POST http://localhost:3001/api/users/
 content-type: application/json
 
 {
-    "username": "SharmilaJirel",
+    "username": "SharmilaJirel1",
     "name": "Sharmilaj "
 }
 ###
@@ -32,3 +32,6 @@ content-type: application/json
 
 ###
 GET http://localhost:3001/api/notes/
+
+###
+GET http://localhost:3001/api/users

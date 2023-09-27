@@ -45,7 +45,7 @@ app.get("/", async (req, res) => {
     attributes: { exclude: ["userId"] },
     include: {
       model: User,
-      attributes: ["name"],
+      attributes: ["name", "username"],
     },
     where,
   });
