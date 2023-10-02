@@ -12,10 +12,10 @@ router.get("/", async (req, res) => {
       },
       {
         model: Team,
-        attributes: ["name", "id"],
-        through: {
-          attributes: [],
-        },
+        attributes: ["name", "id"]
+        // through: {
+        //   attributes: [],
+        // },
       },
     ],
   });
