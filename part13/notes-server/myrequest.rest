@@ -1,21 +1,21 @@
-POST http://localhost:3001/api/notes/
+POST http://localhost:3001/api/notes/TejFellowship
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImppcmVsIiwiaWQiOjUsImlhdCI6MTY5NTgwMTIwNX0.hx6R43Phs36F-XtjRT_RPoWtJ7LATKkEZ9N9sp09SJE
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlakZlbGxvd3NoaXAiLCJpZCI6MywiaWF0IjoxNjk2MjQwMDc0fQ.PtYeWwLQPoBO8mYEhrLcoxeOXadc_36TMMEHc3QOnUo
 
 {
-    "content": "Sharmila notes2",
-    "important": false
+    "disabled": true
 }
+
 ###
 POST http://localhost:3001/api/users/
 content-type: application/json
 
 {
-    "username": "SharmilaJirel1",
-    "name": "Sharmilaj "
+    "username": "TejFellowship",
+    "name": "TEJ fellowship"
 }
 ###
-PUT http://localhost:3001/api/notes/2
+PUT http://localhost:3001/api/notes/
 content-type: application/json
 
 {
@@ -26,7 +26,7 @@ POST http://localhost:3001/api/login/
 content-type: application/json
 
 {
-    "username": "SharmilaJirel",
+    "username": "TejFellowship",
     "password": "secret"
 }
 
@@ -35,3 +35,4 @@ GET http://localhost:3001/api/notes/
 
 ###
 GET http://localhost:3001/api/users
+
