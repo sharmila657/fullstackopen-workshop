@@ -21,7 +21,7 @@ User.init(
       allowNull: false,
     },
     admin: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.BOOLEAN, 
       defaultValue: false,
     },
     disabled: {
