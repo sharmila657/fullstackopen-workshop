@@ -1,9 +1,10 @@
-POST http://localhost:3001/api/notes/TejFellowship1
+POST http://localhost:3001/api/notes/
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlakZlbGxvd3NoaXAxIiwiaWQiOjQsImlhdCI6MTY5NjMyMDk1MH0.EcjGSHd575HxpjeFACl_7-6_VRiJXJmFVex8j7z2k5U
-   
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld3VzZXIiLCJpZCI6NiwiaWF0IjoxNjk2NDAzMTYxfQ.7Bt0sDd8NZLoafCEG94btlp88pBf5xJYKU5YJdKrDPA
+  
    {
-    "disabled": true
+    "content": "hi my name is sharmila",
+    "important": true
    }
 
 
@@ -12,8 +13,8 @@ POST http://localhost:3001/api/users/
 content-type: application/json
 
 {
-    "username": "TejFellowship1",
-    "name": "TEJ fellowship"
+    "username": "newuser",
+    "name": "newuser1"
 }
 
 ###
@@ -21,6 +22,7 @@ PUT http://localhost:3001/api/notes/
 content-type: application/json
 
 {
+    "content":"hello",
     "important": true
 }
 
@@ -29,7 +31,7 @@ POST http://localhost:3001/api/login/
 content-type: application/json
 
 {
-    "username": "TejFellowship1",
+    "username": "newuser",
     "password": "secret"
 }
 
