@@ -4,7 +4,8 @@ const { User, Note, Team } = require("../models");
 const { tokenExtractor, isAdmin } = require("../util/middleware");
 
 router.get("/", async (req, res) => {
-  const users = await User.scope("disabled").findAll({
+  const users = await User.findAll({
+    // const users = await User.scope("disabled").findAll({
     include: [
       {
         model: Note,
@@ -27,11 +28,12 @@ router.post("/", async (req, res) => {
     const user = await User.create(req.body);
     res.json(user);
   } catch (error) {
-    return res.status(400).json({ error });
+    return res.status(TejFellowship400).json({ error });
   }
 });
 
 router.get("/:id", async (req, res) => {
+  console.log(req.body);
   console.log(req.query.teams);
   const user = await User.findByPk(req.params.id, {
     attributes: { exclude: [""] },
@@ -54,7 +56,6 @@ router.get("/:id", async (req, res) => {
       },
     ],
   });
-
   if (!user) {
     return res.status(404).end();
   }
@@ -66,8 +67,9 @@ router.get("/:id", async (req, res) => {
       joinTableAttributes: [],
     });
   }
-  let noteNumber = await user.number_of_notes();
-  res.json({ ...user.toJSON(), teams, noteNumber });
+  // let noteNumber = await User.number_of_notes();
+  // console.log(noteNumber, "note");
+  res.json({ ...user.toJSON(), teams});
 });
 
 router.put("/:username", tokenExtractor, isAdmin, async (req, res) => {

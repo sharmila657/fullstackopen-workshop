@@ -5,4 +5,4 @@ module.exports = {
   PORT: 3001,
   SECRET: process.env.SECRET,
 };
-``;
+
