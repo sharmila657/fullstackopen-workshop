@@ -12,19 +12,19 @@ const multiplicator = (a: number, b: number, operation: Operation): Result => {
   }
   return "not valid operation";
 };
-try {
-  console.log(multiplicator(2, 2, "multiply"));
-} catch (e) {
-  console.log("error is", e.message);
-}
-
 // try {
-//   console.log(multiplicator(2, 0, "divide"));
-// } catch (e: unknown) {
-//   if (e instanceof Error) {
-//     console.log("error is", e.message);
-//   }
+//   console.log(multiplicator(2, 2, "multiply"));
+// } catch (e) {
+//   console.log("error is", e.message);
 // }
+
+try {
+  console.log(multiplicator(2, 0, "multiply"));
+} catch (e: unknown) {
+  if (e instanceof Error) {
+    console.log("error is", e.message);
+  }
+}
 
 // multiplicator('how about a string?',
 //     4,
