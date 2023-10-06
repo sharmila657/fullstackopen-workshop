@@ -1,5 +1,5 @@
 {
-  "name": "my-app1",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "@types/node": "^16.18.57",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.10",
+    "axios": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -21,8 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint \"./src/**/*.{ts,tsx}\""
-
+    "lint": "eslint \"./src/**/*.{ts,tsx}\"",
+    "server": "json-server --port 3001 --watch db.json"
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4",
+    "jsonserver": "^0.1.6"
   }
 }

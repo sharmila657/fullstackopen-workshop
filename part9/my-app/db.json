@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "content": "json-server"
+    },
+    {
+      "id": 2,
+      "content": "json-server"
+    },
+    {
+      "content": "new note",
+      "id": 3
+    }
+  ]
+}
